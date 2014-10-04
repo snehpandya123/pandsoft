@@ -11,8 +11,8 @@ class ApplicationController < ActionController::Base
     end
 
 	def after_sign_out_path_for(resource)
-		if user_signed_in?
+		
 			users_dashboard_path
- 		end
+ 		
    	end
 end
