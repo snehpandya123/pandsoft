@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   get 'users/dashboard'
+  get 'charges/index'
+  get 'charges/create'
 
-  devise_for :users , :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  devise_for :users 
   
   root :to => "users#dashboard"
 
-
+resources :charges
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

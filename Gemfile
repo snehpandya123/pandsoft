@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.1.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use sqlite3 as the database for Active Record
@@ -12,7 +12,7 @@ gem 'rails_12factor', group: :production
 gem 'protected_attributes'
 gem 'jquery-turbolinks'
 gem 'jquery-ui-rails'
-
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem "kaminari"
 gem 'twitter-bootstrap-rails'
 
