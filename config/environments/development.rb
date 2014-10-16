@@ -25,9 +25,9 @@ config.action_mailer.raise_delivery_errors = true
 config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
       :port                 => 587,
-      :user_name            => 'snehp92@gmail.com',
-      :password             => 'ernakulam;',
-      :authentication       => 'plain',
+      :user_name            => 'teampandsoft@gmail.com',
+      :password             => ';ernakulam',
+      :authentication       => 'login',
       :enable_starttls_auto => true  }
  
 

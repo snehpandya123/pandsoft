@@ -1,16 +1,17 @@
 class ChargesController < ApplicationController
 
+before_filter :login_required, only: [:new, :create, :index, :destroy]
 
 def new
 end
 
 def create
-	Stripe.api_key = "sk_test_1WB8cexbqa7n6KerhleA6t8k"
+	Stripe.api_key = "sk_live_WHIBjydKTdcM5JjOYor60dQT"
   # Amount in cents
-  @amount = 5000
-
+  @amount = params[:amount]
+   
   customer = Stripe::Customer.create(
-    :email => 'example@stripe.com',
+    :email => "#{current_user.email}",
     :card  => params[:stripeToken]
   ) 
 
@@ -28,4 +29,12 @@ end
 
 def index
 end
+
+private
+  def login_required
+    unless current_user
+      flash[:error] = 'You must be logged in to view this page.'
+      redirect_to new_user_session_path
+    end
+  end
 end

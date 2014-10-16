@@ -1,9 +1,27 @@
 Rails.application.routes.draw do
+  get 'homes/show'
+resources :homes, only: [:show]
+
+
+  resources :stories do
+      member { post :vote }
+  end
+
+    
+ devise_for :users,  :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+
+  resources :phases
+
+  resources :folders
+
   get 'users/dashboard'
   get 'charges/index'
   get 'charges/create'
+  get 'users/home'
+  get 'users/myphase'
+  get 'users/mystories'
 
-  devise_for :users 
+  
   
   root :to => "users#dashboard"
 
